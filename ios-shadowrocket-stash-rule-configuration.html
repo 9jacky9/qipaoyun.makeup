@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone与iPad移动端分流规则进阶教程：兼顾续航省电与全天候秒开体验 - 气泡云</title>
-  <meta name="description" content="详解iOS系统Network Extension内存限制机制，手把手教你优化Shadowrocket、Stash与Loon的分流规则，告别手机发热耗电与杀后台断连。">
+  <title>iPhone 上规则分组怎么搭：新手版的三组规则 - 气泡云轻盈研习社</title>
+  <meta name="description" content="在 iPhone 上使用 Shadowrocket、Stash 等客户端，规则怎么设置才简单好用？介绍新手版的三组规则：直连、代理与备用，附设置要点。">
   <link rel="canonical" href="https://qipaoyun.makeup/ios-shadowrocket-stash-rule-configuration.html">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -65,43 +65,26 @@
   <main>
     <section class="velvet-subhero">
       <div class="velvet-container">
-        <span class="editorial-sec-kicker">iOS与iPadOS进阶</span>
-        <h1>iPhone与iPad移动端分流规则进阶教程：兼顾续航省电与全天候秒开体验</h1>
-        <p>详解iOS系统Network Extension内存限制机制，手把手教你优化Shadowrocket、Stash与Loon的分流规则，告别手机发热耗电与杀后台断连。</p>
+        <span class="editorial-sec-kicker">苹果设备</span>
+        <h1>iPhone 上规则分组怎么搭：新手版的三组规则</h1>
+        <p>规则看起来复杂，其实可以拆成三个简单的分组。先搭好骨架，再慢慢细化。</p>
       </div>
     </section>
     <div class="velvet-container">
       <article class="velvet-prose">
-        
-<h2>为什么你的iPhone开启加速后容易发热、耗电快甚至无故断连？</h2>
-<p>对于广大iPhone与iPad用户而言，Shadowrocket（小火箭）、Stash、Quantumult X以及Loon是日常出镜率最高的网络加速利器。许多追求极致体验的用户喜欢在网上搜罗各种号称“全能去广告+几十万条域名全覆盖”的巨型懒人配置规则，结果导入后没过两天就发现：手机机身明显温热、电池健康度掉得飞快，而且经常锁屏放在口袋里一会儿，再拿出来刷消息时发现右上角的VPN图标莫名其妙消失了。</p>
-<p>事实上，这并不是手机硬件出了故障，而是因为臃肿的规则集触发了苹果iOS系统底层的严苛沙盒保护机制。想要获取针对苹果全系设备深度精简的高效配置文件，可以访问iOS与移动端代理分流配置全集查阅各款主流App的调优方案。</p>
-
-<h2>读懂苹果iOS底层铁律：50MB内存生死线</h2>
-<p>为了保障系统的流畅度与续航表现，苹果iOS与iPadOS对所有运行在后台的Network Extension（网络扩展虚拟网卡进程）设定了一条铁律：内存占用峰值严格限制在50MB以内。</p>
-
-<h3>1. 巨型规则集与正则匹配是如何撑爆内存的？</h3>
-<p>当你导入一份包含30万条细分域名和大量复杂正则表达式重写（Rewrite/MITM）的规则时，手机每次发起网络请求，内核都必须在毫秒级内遍历庞大的规则树。一旦遇到打开图文并茂的App瞬间并发上百个请求，虚拟网卡进程的内存占用就会瞬间突破50MB红线，被iOS系统看门狗（Watchdog）无情强制杀死，表现为频繁断流重连与CPU持续高负载耗电。</p>
-
-<h3>2. 频繁无意义的节点延迟测速（URL-Test）</h3>
-<p>不少配置默认将自动测速间隔设为60秒甚至30秒，每分钟唤醒一次蜂窝基带芯片向全球几十个节点发送探测包，这在5G移动网络下简直是名副其实的“电量粉碎机”。</p>
-
-<h2>气泡云轻盈分流哲学：三步实现24小时无感省电常驻</h2>
-<p>为了让iPhone与iPad用户在享受全球秒开的同时拥有媲美原生的续航表现，气泡云研发团队精心打磨了一套“虹彩轻盈云端规则”：</p>
-
-<h3>1. 采用高效二进制GeoSite与IP-CIDR精简树</h3>
-<p>我们将核心分流逻辑收敛至3000条以内的高频精准集合，全面摒弃高耗能的网页内容正则篡改。运行期间内存占用常年稳定在14MB至18MB之间，仅为系统上限的三分之一，彻底杜绝后台被杀。</p>
-
-<h3>2. 开启按需唤醒与长周期智能被动健康检查</h3>
-<p>在气泡云专属订阅配置中，节点巡检间隔被科学设定为600秒至1200秒，并优先采用被动连接状态感知：只有当实际访问发生超时波动时才触发毫秒级无感切换，锁屏待机状态下零流量、零基带唤醒。</p>
-
-<h3>3. Apple全生态服务（iCloud / Push / TestFlight）精细化直连与加速</h3>
-<p>针对苹果用户痛点，我们将APNs消息推送、iCloud照片图库国内CDN设为极速直连，而将App Store海外区更新、Apple Music无损曲库以及Apple Intelligence接口精准指向高速微泡专线，让您的iPhone与iPad全天候保持冰凉省电、丝滑在线。</p>
-
-<h2>结语：化繁为简才是移动端分流的最高境界</h2>
-<p>真正高级的移动端加速配置，绝不是把规则列表堆砌得越长越好，而是用最精炼的匹配逻辑实现最敏捷的按需分流。导入气泡云一键智能订阅，配合iOS快捷指令自动化或按需连接（On-Demand）功能，即可让您的随身iPhone与iPad从此告别发热与掉电焦虑，全天24小时轻盈待命、秒开全球精彩内容。</p>
-
-        <div class="velvet-cta-box">
+<h2>第一组：直连</h2>
+<p>放入国内常用网站与应用、银行与支付类服务、局域网地址。让这些流量不经过代理，速度更快，也避免因出口变化而被风控。</p>
+<h2>第二组：代理</h2>
+<p>放入需要访问的海外网站与服务，如社交、视频、开发与办公工具。选择一个稳定的节点作为这一组的出口。</p>
+<h2>第三组：备用</h2>
+<p>为主节点出问题时准备另一个地区的节点，或者使用客户端的故障转移功能，让它在主节点不可用时自动切换。</p>
+<h2>设置时的小提醒</h2>
+<ul><li>规则从上到下匹配，精确的放前面，宽泛的放后面。</li><li>最后设置一条“兜底规则”，例如其余走代理或直连。</li><li>修改后用几个常用网站测试，再保存。</li></ul>
+<h2>日常维护</h2>
+<p>定期更新规则集，并记录自己添加过的规则，出问题时能快速回溯。</p>
+<h2>小结</h2>
+<p>骨架清晰，细节就好调整。可以先通过气泡云的免费体验在手机上搭一套，再慢慢完善。</p>
+ <div class="velvet-cta-box">
           <h3>即刻开启气泡云珍珠虹彩微泡加速</h3>
           <p>专为视觉创作者、4K流媒体鉴赏家与AIGC工作流打造的丝滑网络专线。</p>
           <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" rel="nofollow" target="_blank" class="btn-velvet-primary">免费注册试用气泡云</a>
